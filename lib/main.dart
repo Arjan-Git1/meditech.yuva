@@ -210,7 +210,15 @@ class Welcomepage extends StatelessWidget {
                   child: Column(
                     children: [
                       Text("Medicine reminder"),
-                      ElevatedButton(onPressed: (){}, child:Text("MEDREM"))
+                      ElevatedButton(onPressed: (){
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context)=>medrem(),)
+                        );
+                      },
+                        child: Text("MEDREM",),
+                        style: ElevatedButton.styleFrom(
+
+                        ),)
                     ],
                   ),
                 )
@@ -220,3 +228,65 @@ class Welcomepage extends StatelessWidget {
     );
   }
 }
+
+class medrem extends StatelessWidget {
+
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        appBar: AppBar(
+          centerTitle: true,
+          title: Text("MEDITECH",
+            style: TextStyle(
+              fontFamily: 'Azonix',
+              fontSize: 25,
+            ),
+
+          ),
+
+
+        ),
+      body: SingleChildScrollView(
+        child: Column(
+          children:[
+            ElevatedButton(onPressed: (){
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context)=>addmed(),)
+              );
+            },
+              child: Text("Add Med",),
+              style: ElevatedButton.styleFrom(
+
+              ),)
+          ]
+        )
+      )
+    );
+  }
+}
+
+class addmed extends StatelessWidget {
+  const addmed({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        centerTitle: true,
+        title: Text("MEDITECH",
+          style: TextStyle(
+            fontFamily: 'Azonix',
+            fontSize: 25,
+          ),
+
+        ),
+
+
+      ),
+
+    );
+  }
+}
+
+
