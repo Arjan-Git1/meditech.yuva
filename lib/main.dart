@@ -284,7 +284,22 @@ class addmed extends StatelessWidget {
 
 
       ),
+     body: SingleChildScrollView(
+       child: Column(
 
+         children: [
+           TextField(
+             style: TextStyle(
+               fontSize: 15.0,
+             ),
+             decoration: InputDecoration(
+
+               hintText: "Add Medicine",
+             ),
+           )
+         ],
+       ),
+     ),
     );
   }
 }
